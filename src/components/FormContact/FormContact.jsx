@@ -1,6 +1,5 @@
 import { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { getValue } from '@testing-library/user-event/dist/utils';
 
 class FormContact extends Component {
   state = {
