@@ -15,6 +15,7 @@ class FormContact extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
+
     this.props.onSubmit({
       name: this.state.name,
       number: this.state.number,
@@ -48,7 +49,7 @@ class FormContact extends Component {
             type="tel"
             className="form-control"
             id="exampleFormControlInput1"
-            placeholder="number"
+            placeholder="number"                
             onChange={this.handleChange}
             value={this.state.number}
           />

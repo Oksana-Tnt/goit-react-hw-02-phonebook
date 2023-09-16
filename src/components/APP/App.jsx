@@ -14,15 +14,25 @@ export class App extends Component {
     filter: '',
   };
 
-  addContact = ({ name, number }) => {
+  addContact = ({ name, number }) => {  
+    const { contacts} = this.state;
+    if (contacts.find(contact =>
+       contact.name.toLowerCase().includes(name.toLowerCase()))){
+         alert(`${name} is already in contacts`);
+         return;
+       }
+
     const newContact = {
       id: nanoid(),
       name,
       number,
     };
+
     this.setState(({ contacts }) => ({
       contacts: [newContact, ...contacts],
-    }));
+    }));   
+
+ 
   };
 
   deleteContact = id => {
